@@ -2,6 +2,8 @@
 .metadata/
 .metadata
 
+ZipKin
+ZipKin/
 *.zip
 *.metadata
 *.metadata/
