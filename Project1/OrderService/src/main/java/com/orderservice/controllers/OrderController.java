@@ -1,6 +1,7 @@
 package com.orderservice.controllers;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -17,7 +18,7 @@ public class OrderController {
 
 	@Autowired
 	private OrderService orderService;
-	
+
 			
 	@GetMapping
 	public String getOrders() {
@@ -25,6 +26,7 @@ public class OrderController {
 	    return "All orders: " + userInfo;
 	}
 
+	
 	
     @GetMapping("/{id}")
     public String getOrder(@PathVariable("id") String orderId) {
@@ -38,6 +40,15 @@ public class OrderController {
         return "For Order details id: " + orderId +"  --- userInfo  : "+ userInfo;
     }
     
+    
+    
+    @Value("${order-service.message}")
+    private String message;
+
+    @GetMapping("/message")
+    public String getMessage() {
+        return this.message;
+    }
     
     
     @GetMapping("/test")

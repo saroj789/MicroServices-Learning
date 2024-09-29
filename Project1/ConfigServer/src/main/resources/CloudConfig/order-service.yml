@@ -1,0 +1,8 @@
+server:
+  port: 8082
+spring:
+  application:
+    name: order-service
+
+order-service:
+  message: "Order Service Configuration from Cloud Config"

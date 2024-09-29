@@ -1,0 +1,20 @@
+server:
+  port: 8888
+  
+spring:
+  application:
+    name: config-server
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/saroj789/msconfig/
+          default-label: master
+          clone-on-start: true
+#        native:
+#          search-locations:
+#            - classpath:/CloudConfig # Config files for all microservices
+#  profiles:
+#    active: native
+  
+
